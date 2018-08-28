@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<h1>This is our calculator</h1>
+
+<table>
+	<tr>
+		<td>Please input the first number</td>
+		<td><input type="number" name="FirstNumber"></td>
+	</tr>
+	<tr>
+		<td>Please input the second number</td>
+		<td><input type="number" name="SecondNumber"></td>
+	</tr>
+	<tr>
+		<td>Please input the operator</td>
+		<td><input type="text" name="Operator"></td>
+	</tr>
+	<tr>
+		<td><button onclick="calculate()">Show Answer</button></td>
+		<td><p id="rightAnswer"></p></td>
+	</tr>
+</table>
+
+
+<script>
+	function calculate(){
+		var first=document.getElementsByName("FirstNumber")[0].value;
+		var second=document.getElementsByName("SecondNumber")[0].value;
+		var theOperator=document.getElementsByName("Operator")[0].value;
+		var answer=0;
+		if(theOperator=="+"){
+		answer=Number(first)+Number(second);
+		}else if(theOperator=="-"){
+		answer=Number(first)-Number(second);
+		}else if(theOperator=="/"&&second!=0){
+		answer=Number(first)/Number(second);
+		}else if(theOperator=="*"){
+		answer=Number(first)*Number(second);
+		}else{
+		answer="Something is wrong";
+		}
+		document.getElementById("rightAnswer").innerHTML=answer;
+	
+	
+	}
+</script>
+
+</html>
